@@ -47,7 +47,7 @@ void updateScreenCallback(void) {
   mySeriel->write(UpHeader);
   mySeriel->write((uint8_t *)buff, NUM_LEDS*3);
   mySeriel->write(endHeader);
-  yield();
+  // yield();
   backgroundLayer.swapBuffers();
 }
 
