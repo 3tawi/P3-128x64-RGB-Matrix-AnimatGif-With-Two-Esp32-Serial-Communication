@@ -38,7 +38,7 @@ void drawFrame() {
   mySeriel->readBytes((uint8_t *)buffer, NUM_LEDS*3);
   if (mySeriel->read() != endHeader)
        return;
-  backgroundLayer.swapBuffers(false);
+  backgroundLayer.swapBuffers();
 }
 
 void setup() {
@@ -67,7 +67,7 @@ void loop() {
       backgroundLayer.fillScreen({ 0, 0, 0 });
       backgroundLayer.setFont(font3x5);
       backgroundLayer.drawString(3, 24, { 255, 0, 255 }, "Waiting");
-      backgroundLayer.swapBuffers(true);
+      backgroundLayer.swapBuffers();
       lastData = millis();
    }
 }
